@@ -13,12 +13,142 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style>
+        .glitch-bg {
+            display: block;
+            padding: 5px;
+            background-color: rgba(20,20,20,1);
+        }
+
+        small.glitch-common {
+            color: #f5f5f5;
+            font-weight: bolder;
+            margin: 0;
+            outline: none;
+            padding: 0;
+            position: relative;
+        }
+
+        .glitch_word_box {
+            height: 100px;
+            line-height: 100px;
+            position: relative;
+
+            -webkit-animation: disappear 1s linear;
+            -webkit-animation-iteration-count: infinite, infinite;
+            -moz-animation: disappear 1s linear;
+            -moz-animation-iteration-count: infinite, infinite;
+            -o-animation: disappear 1s linear;
+            -o-animation-iteration-count: infinite, infinite;
+        }
+
+        .glitch_word_box .glitch_word0 {
+            position: absolute;
+            width: 100%;
+        }
+
+        .glitch_word_box .glitch_word1 {
+            color: red;
+            font-weight: bolder;
+            left: -2px;
+            position: absolute;
+            top: -2px;
+            width: 100%;
+            z-index: -1;
+
+            -webkit-animation: animate_glitch_1 .2s linear;
+            -webkit-animation-iteration-count: infinite;
+            -moz-animation: animate_glitch_1 .2s linear;
+            -moz-animation-iteration-count: infinite;
+            -o-animation: animate_glitch_1 .2s linear;
+            -o-animation-iteration-count: infinite;
+        }
+
+        .glitch_word_box .glitch_word2 {
+            color: blue;
+            font-weight: bolder;
+            left: 2px;
+            position: absolute;
+            top: 2px;
+            width: 100%;
+            z-index: -1;
+
+            -webkit-animation: animate_glitch_2 .3s linear;
+            -webkit-animation-iteration-count: infinite;
+            -moz-animation: animate_glitch_2 .3s linear;
+            -moz-animation-iteration-count: infinite;
+            -o-animation: animate_glitch_2 .3s linear;
+            -o-animation-iteration-count: infinite;
+        }
+
+        @-webkit-keyframes disappear {
+            0% {	opacity: 0;	}
+            2% { opacity: 1; }
+        }
+
+        @-webkit-keyframes animate_glitch_1 {
+            0% { top: 1px; left: 1px; }
+            25% { top: 3px; left: 2px;	 }
+            50% { top: -1px; left: -4px;	}
+            75% { top: 2px; left: 5px;	}
+            100% {	top: 1px; left: -2px;	}
+        }
+
+        @-webkit-keyframes animate_glitch_2 {
+            0% { top: -1px; left: -1px;	}
+            25% { top: -3px; left: -2px;	}
+            50% { top: 1px; left: 4px; }
+            100% { top: -1px; left: -1px; }
+        }
+
+        @-moz-keyframes disappear {
+            0% {	opacity: 0;	}
+            2% { opacity: 1; }
+        }
+
+        @-moz-keyframes animate_glitch_1 {
+            0% { top: 1px; left: 1px; }
+            25% { top: 3px; left: 2px;	 }
+            50% { top: -1px; left: -4px;	}
+            75% { top: 2px; left: 5px;	}
+            100% {	top: 1px; left: -2px;	}
+        }
+
+        @-moz-keyframes animate_glitch_2 {
+            0% { top: -1px; left: -1px;	}
+            25% { top: -3px; left: -2px;	}
+            50% { top: 1px; left: 4px; }
+            100% { top: -1px; left: -1px; }
+        }
+
+        @-o-keyframes disappear {
+            0% {	opacity: 0;	}
+            2% { opacity: 1; }
+        }
+
+        @-o-keyframes animate_glitch_1 {
+            0% { top: 1px; left: 1px; }
+            25% { top: 3px; left: 2px;	 }
+            50% { top: -1px; left: -4px;	}
+            75% { top: 2px; left: 5px;	}
+            100% {	top: 1px; left: -2px;	}
+        }
+
+        @-o-keyframes animate_glitch_2 {
+            0% { top: -1px; left: -1px;	}
+            25% { top: -3px; left: -2px;	}
+            50% { top: 1px; left: 4px; }
+            100% { top: -1px; left: -1px; }
+        }
+    </style>
 </head>
 <body>
 <div class="container">
     <div class="row">
         <div class="col-md-9 col-print-9">
-            <h1>Voloshyn Oleg Volodimirovych<br /><small>PHP backend developer</small></h1>
+            <h1>Voloshyn Oleg Volodimirovych<br />
+                <small>PHP backend developer</small>
+            </h1>
             <!--h2>PHP backend developer</h2-->
         </div>
 
@@ -34,6 +164,15 @@
             </p>
         </div>
     </div>
+
+    <a href="/glitch" class="glitch-bg">
+        <div class="glitch_word_box">
+            <div class="line"></div>
+            <small id="word" class="glitch_word0 glitch-common">Watch glitch effect</small>
+            <small id="word1" class="glitch_word1 glitch-common">Watch glitch effect</small>
+            <small id="word2" class="glitch_word2 glitch-common">Watch glitch effect</small>
+        </div>
+    </a>
 
     <hr />
 
