@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>Created correct branch name from task name</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<form id="convertForm">
+    <input type="text" name="task_name" />
+    <button type="submit">Convert</button>
+    <div>Result:</div>
+    <pre id="result"></pre>
+</form>
+<script>
+    $(document).ready(function() {
+        $('#convertForm').submit(function(e) {
+            e.preventDefault();
+
+            $('#result').text($('input[name="task_name"]').val().replace(/[^\w]+?/g, '_'));
+        })
+    })
+</script>
+</body>
+</html>
