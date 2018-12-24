@@ -15,7 +15,7 @@
         $('#convertForm').submit(function(e) {
             e.preventDefault();
 
-            $('#result').text($('input[name="task_name"]').val().replace(/[^\w]+?/g, '_'));
+            $('#result').text($('input[name="task_name"]').val().replace('#', '').replace(/[^\w]+?/g, '_'));
         })
     })
 </script>
