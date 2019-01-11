@@ -15,9 +15,11 @@
     <![endif]-->
     <style>
         .glitch-bg {
+            margin: 20px 0 0 0;
             display: block;
             padding: 5px;
             background-color: rgba(20,20,20,1);
+            width: 164px;
         }
 
         small.glitch-common {
@@ -30,8 +32,8 @@
         }
 
         .glitch_word_box {
-            height: 100px;
-            line-height: 100px;
+            height: 18px;
+            line-height: 10px;
             position: relative;
 
             -webkit-animation: disappear 1s linear;
@@ -147,9 +149,15 @@
     <div class="row">
         <div class="col-md-9 col-print-9">
             <h1>Voloshyn Oleg Volodimirovych<br />
-                <small>PHP backend developer</small>
+                <small class="glitch-bg">
+                    <div class="glitch_word_box">
+                        <div class="line"></div>
+                        <small id="word" class="glitch_word0 glitch-common">PHP backend developer</small>
+                        <small id="word1" class="glitch_word1 glitch-common">PHP backend developer</small>
+                        <small id="word2" class="glitch_word2 glitch-common">PHP backend developer</small>
+                    </div>
+                </small>
             </h1>
-            <!--h2>PHP backend developer</h2-->
         </div>
 
         <div class="col-md-3 col-print-3">
@@ -165,14 +173,7 @@
         </div>
     </div>
 
-    <a href="/glitch" class="glitch-bg">
-        <div class="glitch_word_box">
-            <div class="line"></div>
-            <small id="word" class="glitch_word0 glitch-common">Watch glitch effect</small>
-            <small id="word1" class="glitch_word1 glitch-common">Watch glitch effect</small>
-            <small id="word2" class="glitch_word2 glitch-common">Watch glitch effect</small>
-        </div>
-    </a>
+
 
     <hr />
 
@@ -512,7 +513,7 @@
             </div>
         </div>
     </div>
-</div>
+</small>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
