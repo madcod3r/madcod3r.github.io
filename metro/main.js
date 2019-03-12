@@ -126,6 +126,11 @@ let schedule = [
 
 ];
 
+let calculationOfTrainTime = [
+    [2.05, 5.30, 10.25, 12.20, 14.35, 16.50, 18.50, 21.40, 26.35, 28.15, 31.15, 34.20, 36.35, 38.40, 41.00], // from Syrets to Chervoniy Khutir
+    [2.10, 4.25,  6.25,  9.15, 12.05, 13.50, 18.45, 21.40, 23.45, 26.05, 28.15, 30.10, 34.40, 38.05, 40.30]
+];
+
 // For todays date;
 Date.prototype.today = function () {
     return ((this.getDate() < 10)?"0":"") + this.getDate() +"/"+(((this.getMonth()+1) < 10)?"0":"") + (this.getMonth()+1) +"/"+ this.getFullYear();
@@ -138,7 +143,8 @@ Date.prototype.timeNow = function () {
 
 let $currentTime = $('#currentTime'),
     $timeToTrain = $('#timeToTrain'),
-    currentDate = new Date();
+    currentDate = new Date(),
+    startingStation = 'Pozniaky';
 
 let dateFormat = function(dateTime) {
     return dateTime.today() + " " + dateTime.timeNow()
