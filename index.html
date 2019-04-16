@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="print.css">
     <link rel="stylesheet" href="main.css">
-    <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"-->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -18,15 +16,9 @@
 <body>
 <div class="container">
     <div class="row">
-        <div class="col-md-2 col-print-2">
-            <div style="padding: 20px; background: #fff;">
-                <img style="height: auto; width:100%;" src="https://raw.githubusercontent.com/madcod3r/madcod3r.github.io/master/avatar.jpg" />
-            </div>
-        </div>
-
-        <div class="col-md-7 col-print-7">
-            <h1>Voloshyn Oleg Volodimirovych<br />
-                <small class="glitch-bg">
+        <div class="col-md-7 col-print-7 col-xs-7">
+            <h1>Voloshyn Oleg<br />
+                <small class="glitch-bg hidden-print">
                     <div class="glitch_word_box">
                         <div class="line"></div>
                         <small id="word" class="glitch_word0 glitch-common">PHP backend developer</small>
@@ -34,15 +26,16 @@
                         <small id="word2" class="glitch_word2 glitch-common">PHP backend developer</small>
                     </div>
                 </small>
+                <small class="visible-print">PHP backend developer</small>
             </h1>
         </div>
 
-        <div class="col-md-3 col-print-3">
+        <div class="col-md-3 col-print-5 col-xs-5">
             <p style="margin-top:35px">
                 <small>
                 Kiev, Ukraine<br />
                 +38073 042 68 13<br />
-                <a href="mailto:oleg@mad.pp.ua">vololeg93@gmail.com</a><br />
+                <a href="mailto:vololeg93@gmail.com">vololeg93@gmail.com</a><br />
                 </small>
             </p>
         </div>
@@ -51,33 +44,45 @@
     <hr />
 
     <div class="row">
-        <div class="col-md-3 col-print-3">
+        <div class="col-md-3 col-print-3 print-hidden">
             <h3>Skills</h3>
         </div>
 
         <div class="col-md-9 col-print-9">
             <div class="labels">
-                <span>HTML5</span>
-                <span>100%</span>
-            </div>
-            <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
-                </div>
-            </div>
-            <div class="labels">
                 <span>PHP7</span>
-                <span>95%</span>
+                <span>90%</span>
             </div>
             <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 95%;">
+                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                     style="width: 90%;">
                 </div>
             </div>
             <div class="labels">
-                <span>Symfony Framework</span>
+                <span>JavaScript</span>
+                <span>90%</span>
+            </div>
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                     style="width: 90%;">
+                </div>
+            </div>
+            <div class="labels">
+                <span>Symfony</span>
                 <span>95%</span>
             </div>
             <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 95%;">
+                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                     style="width: 95%;">
+                </div>
+            </div>
+            <div class="labels">
+                <span>Yii2</span>
+                <span>70%</span>
+            </div>
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                     style="width: 70%;">
                 </div>
             </div>
             <div class="labels">
@@ -85,7 +90,8 @@
                 <span>90%</span>
             </div>
             <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
+                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                     style="width: 90%;">
                 </div>
             </div>
             <div class="labels">
@@ -93,15 +99,17 @@
                 <span>50%</span>
             </div>
             <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
+                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                     style="width: 50%;">
                 </div>
             </div>
             <div class="labels">
                 <span>Linux</span>
-                <span>99%</span>
+                <span>80%</span>
             </div>
             <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 99%;">
+                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                     style="width: 80%;">
                 </div>
             </div>
             <div class="labels">
@@ -109,7 +117,8 @@
                 <span>70%</span>
             </div>
             <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
+                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                     style="width: 70%;">
                 </div>
             </div>
         </div>
@@ -163,7 +172,7 @@
 
                 <div class="col-md-9 col-print-9">
                     <ul>
-                        <li>Adding new functionality to the online store to synchronize with skaladom quantity of goods</li>
+                        <li>Adding new functionality to the online store to synchronize with stock quantity of goods</li>
                         <li>The stretch the new design in the online store</li>
                         <li>Parse product price from different shops (to compare)</li>
                     </ul>
@@ -196,9 +205,9 @@
 
                 <div class="col-md-9 col-print-9">
                     <ul>
-                        <li>The site is written in the framework, CodeIgniter, with multilinguage</li>
+                        <li>The site is written in the framework, CodeIgniter, with multilingual</li>
                         <li>Create registration / authentication of users</li>
-                        <li>Creating a news site and the module "The upcoming event" in the website and FB app</li>
+                        <li>Creating a News site and the module "The upcoming event" on the website and FB app</li>
                     </ul>
                 </div>
             </div>
@@ -304,7 +313,7 @@
                         <li>The store is designed with the help of Magento engine</li>
                         <li>Used VM Virtualbox technology (Vagrant) dev server</li>
                         <li>I have used PHP to modify both the frontend and the backend part of the Magento</li>
-                        <li>Used XML + PHP + HTML + CSS + JS to stretch \ modificate template to adaptive (mobile) template for a client needs. Used GULP technology to generate CSS file from SASS</li>
+                        <li>Used XML + PHP + HTML + CSS + JS to stretch \ modify template to adaptive (mobile) template for a client needs. Used GULP technology to generate CSS file from SASS</li>
                     </ul>
                 </div>
             </div>
@@ -324,7 +333,7 @@
                         <li>Established images loading module (with caching and all the stuff)</li>
                         <li>Installed the module of text editor + added to it a file manager to upload pictures</li>
                         <li>Created DB architecture and used MySQL to create and manage database</li>
-                        <li>Created multilanguage module used default Phalcon system and MySQL database</li>
+                        <li>Created multi language module used default Phalcon system and MySQL database</li>
                     </ul>
                 </div>
             </div>
@@ -386,7 +395,7 @@
 
             <div class="row">
                 <div class="col-md-3 col-print-3">
-                    <h4>2018 year<br />Work at Interactivity</h4>
+                    <h4>2018-2019 year<br />Work at Interactivity</h4>
                 </div>
 
                 <div class="col-md-9 col-print-9">
@@ -397,6 +406,44 @@
                         <li>Moving from legacy PHP code to Symfony 3</li>
                         <li>Moving from Symfony 3 to Symfony 4</li>
                         <li>Working on <a target="_blank" href="http://ieeetv.ieee.org/">ieeetv.ieee.org</a> project</li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr />
+
+            <div class="row">
+                <div class="col-md-3 col-print-3">
+                    <h4>2019 year<br />Work at Big Digitals Ukraine</h4>
+                </div>
+
+                <div class="col-md-9 col-print-9">
+                    <ul>
+                        <li>ello.tv - project on Symfony 2
+                            <ul>
+                                <li>Creating new features/support old code</li>
+                                <li>Updated REST API</li>
+                            </ul>
+                        </li>
+                        <li>lunchpoint.com - project on Yii2
+                            <ul>
+                                <li>Fixed many bugs</li>
+                                <li>Added new featured: geolocation, selecting countries and cities</li>
+                                <li>Updated search bar</li>
+                            </ul>
+                        </li>
+                        <li>insfero.com - project on Symfony 3 (Redis, Commet server, React, Bitrix24 API, Codeception, Jenkins)
+                            <ul>Fixed Jenkins CI/CD</ul>
+                            <ul>Fixed few bugs, added new features</ul>
+                        </li>
+                        <li>fs.com.ua - project on Custom Framework
+                            <ul>
+                                <li>Updated sync with 1C stock</li>
+                                <li>Fixed search</li>
+                                <li>sitemap.xml generation</li>
+                                <li>Implemented city recognition, updating bunch of photos feature and creating of banners</li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>
