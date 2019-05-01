@@ -131,9 +131,9 @@ small.glitch-common {
     display: flex;
     justify-content: space-between;
     margin-bottom: 5px;
-span {
-    color: #666;
 }
+.labels span {
+    color: #666;
 }
 .progress {
     height: 5px;
