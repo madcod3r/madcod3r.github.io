@@ -45,7 +45,7 @@
 
     <div class="row hidden-print">
         <div class="col-md-3 col-print-3">
-            <h3>{{ skills.title }}</h3>
+            <h2>{{ skills.title }}</h2>
         </div>
 
         <div class="col-md-9 col-print-9">
@@ -83,10 +83,10 @@
             <h2>{{ education.title }}</h2>
             <hr />
 
-            {% for education in education.list %}
+            {% for education in education.list | reverse %}
                 <div class="row">
                     <div class="col-md-3 col-print-3">
-                        <h4>{{ education.period }}</h4>
+                        <h3>{{ education.period }}</h3>
                     </div>
 
                     <ul class="col-md-9 col-print-9">
@@ -106,16 +106,15 @@
 
             <hr />
 
-            {% for exp in experience.list %}
+            {% for exp in experience.list | reverse %}
                 <div class="row">
                     <div class="col-md-3 col-print-3">
-                        <h4>
-                            <small>{{ exp.type }}</small>
-                            <small>{{ exp.period }}</small>
-                            <br />
+                        <h3>
+                            <div>
+                                <small>{{ exp.type }}, {{ exp.period }}</small>
+                            </div>
                             {% if exp.comp %}
-                                {{ exp.comp }}
-                                <br />
+                                <div>{{ exp.comp }}</div>
                             {% endif %}
                             {% if exp.desc %}
                                 <small><b>{{ exp.desc }}</b></small>
@@ -127,39 +126,38 @@
                                 </small>
                                 <br />
                             {% endif %}
-                        </h4>
+                        </h3>
                     </div>
 
                     {% if exp.projects %}
                         <div class="col-md-9 col-print-9">
-                            <ul>
-                                {% for project in exp.projects %}
-                                    <li>
-                                        {% if project.name %}
-                                            <b>{{ project.name }}</b>
-                                        {% endif %}
+                            {% for project in exp.projects %}
+                                <h3>
+                                    {% if project.name %}
+                                        <b>{{ project.name }}</b>
+                                    {% endif %}
 
-                                        {% if project.link %}
-                                            <a href="http://{{ project.link }}" target="_blank">{{ project.link }}</a>
-                                        {% endif %}
+                                    {% if project.link %}
+                                        <a href="http://{{ project.link }}" target="_blank">{{ project.link }}</a>
+                                    {% endif %}
 
-                                        {% for link in project.links %}
-                                            <a href="http://{{ link }}" target="_blank">{{ link }}</a>
+                                    {% for link in project.links %}
+                                        <a href="http://{{ link }}" target="_blank">{{ link }}</a>
+                                    {% endfor %}
+
+                                    <small>{{ project.period }}</small>
+
+                                    <div><small>{{ project.resp }}</small></div>
+                                </h3>
+
+                                {% if project.tasks %}
+                                    <ul>
+                                        {% for task in project.tasks %}
+                                            <li>{{ task }}</li>
                                         {% endfor %}
-
-                                        <br />
-                                        <div class="well well-sm">{{ project.resp }}</div>
-
-                                        {% if project.tasks %}
-                                            <ul>
-                                                {% for task in project.tasks %}
-                                                    <li>{{ task }}</li>
-                                                {% endfor %}
-                                            </ul>
-                                        {% endif %}
-                                    </li>
-                                {% endfor %}
-                            </ul>
+                                    </ul>
+                                {% endif %}
+                            {% endfor %}
                         </div>
                     {% endif %}
                 </div>

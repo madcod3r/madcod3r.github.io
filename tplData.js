@@ -1,4 +1,3 @@
-// @TODO: Invert experience
 //@TODO: added used technologies to experience
 //@TODO: Fix "Quantum Projects" and "Interactivity" experience
 //@TODO: Check typos
@@ -248,13 +247,14 @@ module.exports = {
                 ],
             },
             {
-                period: '2016 year (1 month)',
+                period: '2016 year',
                 type: common.type.office,
                 comp: 'Domik',
                 desc: 'Website rental homes / apartments',
                 link: 'domik.ua',
                 projects: [
                     {
+                        period: '1 month',
                         name: 'Domik.ua',
                         resp: 'Website development and maintenance of rental homes / apartments',
                         link: 'domik.ua',
