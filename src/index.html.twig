@@ -97,7 +97,7 @@
     <div class="row">
 
         <div class="col-md-12 col-print-12">
-            <h2>Experience</h2>
+            <h2>{{ experience.title }}</h2>
 
             <!--hr />
 
@@ -133,38 +133,52 @@
 
             <hr />
 
-            <div class="row">
-                <div class="col-md-3 col-print-3">
-                    <h4>2010-2011 years<br />Freelance:<br /><small>E-shop of electronic equipment (megamarket.lg.ua)</small></h4>
+            {% for exp in experience.list %}
+                <div class="row">
+                    <div class="col-md-3 col-print-3">
+                        <h4>{{ exp.period }}<br />
+                            {{ exp.name }}<br />
+                            <small>
+                                <a href="http://{{ exp.link }}" target="_blank">{{ exp.link }}</a>
+                            </small><br />
+                            <small>{{ exp.type }}</small><br />
+                            <small>{{ exp.description }}</small>
+                        </h4>
+                    </div>
+
+                    {% if exp.list %}
+                    <div class="col-md-9 col-print-9">
+                        <ul>
+                            {% for expItem in exp.list %}
+                                <li>{{ expItem }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
+
+                    {% if exp.projects %}
+                        <div class="col-md-9 col-print-9">
+                            <ul>
+                                {% for project in exp.projects %}
+                                    <li>
+                                        <span>{{ project.name }}</span>
+                                        <a href="http://{{ project.link }}" target="_blank">{{ project.link }}</a>
+                                        <small>{{ project.desc }}</small>
+                                        {% if project.tasks %}
+                                            <ul>
+                                                {% for task in project.tasks %}
+                                                    <li>{{ task }}</li>
+                                                {% endfor %}
+                                            </ul>
+                                        {% endif %}
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    {% endif %}
                 </div>
-
-                <div class="col-md-9 col-print-9">
-                    <ul>
-                        <li>Adding new functionality to the online store to synchronize with stock quantity of goods</li>
-                        <li>The stretch the new design in the online store</li>
-                        <li>Parse product price from different shops (to compare)</li>
-                    </ul>
-                </div>
-            </div>
-
-            <hr />
-
-            <div class="row">
-                <div class="col-md-3 col-print-3">
-                    <h4>2011-2012 years<br />ProdecoTextiles (company, office):<br /><small>Online store for selling textiles (prodecotextiles.com)</small></h4>
-                </div>
-
-                <div class="col-md-9 col-print-9">
-                    <ul>
-                        <li>Development of a multilingual e-shop on the Opencart (MVC) engine</li>
-                        <li>Developing attribute selection module product with automatic change of prices (with many of using JS)</li>
-                        <li>Creation design and PSD2HTML template for this shop</li>
-                        <li>Performance optimization (APC, file cache, browser cache, sql optimization)</li>
-                    </ul>
-                </div>
-            </div>
-
-            <hr />
+                <hr />
+            {% endfor %}
 
             <div class="row">
                 <div class="col-md-3 col-print-3">
@@ -358,44 +372,6 @@
                         <li>Moving from legacy PHP code to Symfony 3</li>
                         <li>Moving from Symfony 3 to Symfony 4</li>
                         <li>Working on <a target="_blank" href="http://ieeetv.ieee.org/">ieeetv.ieee.org</a> project</li>
-                    </ul>
-                </div>
-            </div>
-
-            <hr />
-
-            <div class="row">
-                <div class="col-md-3 col-print-3">
-                    <h4>2019 year<br />Big Digitals Ukraine (company, office)</h4>
-                </div>
-
-                <div class="col-md-9 col-print-9">
-                    <ul>
-                        <li><b>ello.tv</b> - project on Symfony 2
-                            <ul>
-                                <li>Creating new features/support old code</li>
-                                <li>Updated REST API</li>
-                            </ul>
-                        </li>
-                        <li><b>lunchpoint.com</b> - project on Yii2
-                            <ul>
-                                <li>Fixed many bugs</li>
-                                <li>Added new featured: geolocation, selecting countries and cities</li>
-                                <li>Updated search bar</li>
-                            </ul>
-                        </li>
-                        <li><b>insfero.com</b> - project on Symfony 3 (Redis, Commet server, React, Bitrix24 API, Codeception, Jenkins)
-                            <ul>Fixed Jenkins CI/CD</ul>
-                            <ul>Fixed few bugs, added new features</ul>
-                        </li>
-                        <li><b>fs.com.ua</b> - project on Custom Framework
-                            <ul>
-                                <li>Updated sync with 1C stock</li>
-                                <li>Fixed search</li>
-                                <li>sitemap.xml generation</li>
-                                <li>Implemented city recognition, updating bunch of photos feature and creating of banners</li>
-                            </ul>
-                        </li>
                     </ul>
                 </div>
             </div>
