@@ -133,14 +133,14 @@
                         <div class="col-md-9 col-print-9">
                             {% for project in exp.projects %}
                                 <h3>
-                                    {% if project.name %}{{ project.name }}{% endif %}
+                                    {% if project.name %}{{ project.name }}:{% endif %}
 
                                     {% if project.link %}
                                         <a href="http://{{ project.link }}" target="_blank">{{ project.link }}</a>
                                     {% endif %}
 
                                     {% for link in project.links %}
-                                        <a href="http://{{ link }}" target="_blank">{{ link }}</a>
+                                        <a href="http://{{ link }}" target="_blank">{{ link }}</a>{% if loop.last === false %}, {% endif %}
                                     {% endfor %}
 
                                     {% if project.period %}<small>{{ project.period }}</small>{% endif %}
@@ -153,7 +153,7 @@
                                 </div>
 
                                 {% if project.resp %}
-                                <h4><small><b>{{ project.resp }}</b></small></h4>
+                                    <h4><b>{{ project.resp }}</b></h4>
                                 {% endif %}
 
                                 {% if project.tasks %}
