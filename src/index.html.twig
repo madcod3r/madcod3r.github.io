@@ -43,18 +43,12 @@
 
     <hr />
 
-    <div class="row">
-        <div class="col-md-3 col-print-3 print-hidden">
+    <div class="row hidden-print">
+        <div class="col-md-3 col-print-3">
             <h3>{{ skills.title }}</h3>
         </div>
 
-        <div class="col-md-9 col-print-9 visible-print">
-            {% for skill in skills.list %}
-                <span>{{ skill.lang }} ({{ skill.percent }}%)</span>
-            {% endfor %}
-        </div>
-
-        <div class="col-md-9 col-print-9 hidden-print">
+        <div class="col-md-9 col-print-9">
             {% for skill in skills.list %}
                 <div class="labels">
                     <span>{{ skill.lang }}</span>
@@ -69,27 +63,38 @@
         </div>
     </div>
 
-    <hr />
+    <div class="row visible-print">
+        <div class="col-md-3 col-print-3">
+            <h3>{{ skills.title }}</h3>
+        </div>
+
+        <div class="col-md-9 col-print-9">
+            {% for skill in skills.list %}
+                <span class="label label-default">{{ skill.lang }} ({{ skill.percent }}%)</span>
+            {% endfor %}
+        </div>
+    </div>
+
+
+    <hr class="visible-print" />
 
     <div class="row clearfix">
         <div class="col-md-12 col-print-12">
             <h2>{{ education.title }}</h2>
-        </div>
+            <hr />
 
-        <hr />
+            {% for education in education.list %}
+                <div class="row">
+                    <div class="col-md-3 col-print-3">
+                        <h4>{{ education.period }}</h4>
+                    </div>
 
-        {% for education in education.list %}
-            <div class="row">
-                <div class="col-md-3 col-print-3">
-                    <h4>{{ education.period }}</h4>
+                    <ul class="col-md-9 col-print-9">
+                        <li>{{ education.name }}</li>
+                    </ul>
                 </div>
-
-                <ul class="col-md-9 col-print-9">
-                    <li>{{ education.name }}</li>
-                </ul>
-            </div>
-        {% endfor %}
-
+            {% endfor %}
+        </div>
     </div>
 
     <hr />
@@ -99,79 +104,47 @@
         <div class="col-md-12 col-print-12">
             <h2>{{ experience.title }}</h2>
 
-            <!--hr />
-
-            <div class="row">
-                <div class="col-md-3 col-print-3">
-                    <h4>2006-2010 years<br />Introduction to programming</h4>
-                </div>
-
-                <div class="col-md-9 col-print-9">
-                    <ul>
-                        <li>I read various blogs, in particular, the CIS is the most popular IT blog - habrahabr.ru</li>
-                        <li>I read books about the structure \ architecture, different programming languages (mostly PHP), and text-markup languages</li>
-                        <li>I watched all kinds of video tutorials to learn PHP, HTML and CSS</li>
-                        <li>Strengthens the theory in practice learned to code, and then in all learned going to code</li>
-                    </ul>
-                </div>
-            </div>
-
-            <hr />
-
-            <div class="row">
-                <div class="col-md-3 col-print-3">
-                    <h4>2007-2010 years<br />Learning by doing</h4>
-                </div>
-
-                <div class="col-md-9 col-print-9">
-                    <ul>
-                        <li>During my student life I have tried to look on freelance projects and do them</li>
-                        <li>I tried to code something on my own, just to reinforce the theory</li>
-                    </ul>
-                </div>
-            </div-->
-
             <hr />
 
             {% for exp in experience.list %}
                 <div class="row">
                     <div class="col-md-3 col-print-3">
                         <h4>{{ exp.period }}<br />
-                            {{ exp.name }}<br />
-                            {% if exp.links %}
-                                {% for link in exp.links %}
-                                    <small>
-                                        <a href="http://{{ link }}" target="_blank">{{ link }}</a>
-                                    </small><br />
-                                {% endfor %}
-                            {% elseif exp.link %}
+                            {% if exp.comp %}
+                                {{ exp.comp }}<br />
+                            {% endif %}
+                            {% if exp.desc %}
+                                {{ exp.desc }}<br />
+                            {% endif %}
+                            {% if exp.link %}
                                 <small>
                                     <a href="http://{{ exp.link }}" target="_blank">{{ exp.link }}</a>
                                 </small><br />
                             {% endif %}
-                            <small>{{ exp.type }}</small><br />
-                            <small>{{ exp.description }}</small>
+                            <small>{{ exp.type }}</small>
                         </h4>
                     </div>
-
-                    {% if exp.tasks %}
-                    <div class="col-md-9 col-print-9">
-                        <ul>
-                            {% for task in exp.tasks %}
-                                <li>{{ task }}</li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                    {% endif %}
 
                     {% if exp.projects %}
                         <div class="col-md-9 col-print-9">
                             <ul>
                                 {% for project in exp.projects %}
                                     <li>
-                                        <span>{{ project.name }}</span>
-                                        <a href="http://{{ project.link }}" target="_blank">{{ project.link }}</a>
-                                        <small>{{ project.desc }}</small>
+                                        {% if project.name %}
+                                            <b>{{ project.name }}</b>
+                                        {% endif %}
+
+                                        {% if project.link %}
+                                            <a href="http://{{ project.link }}" target="_blank">{{ project.link }}</a>
+                                        {% endif %}
+
+                                            {% for link in project.links %}
+                                                <a href="http://{{ link }}" target="_blank">{{ link }}</a>
+                                            {% endfor %}
+
+                                        <br />
+                                        <small>{{ project.resp }}</small>
+
                                         {% if project.tasks %}
                                             <ul>
                                                 {% for task in project.tasks %}
