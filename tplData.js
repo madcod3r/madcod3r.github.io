@@ -1,6 +1,7 @@
-//@TODO: added used technologies to experience
-//@TODO: Fix "Quantum Projects" and "Interactivity" experience
+//@TODO: Add used technologies to every project
+//@TODO: Rewrite project tasks (think more what I did, maybe some SQL optimisation)
 //@TODO: Check typos
+//@TODO: Fix rude text
 
 const common = {
     type: {
@@ -268,7 +269,7 @@ module.exports = {
                 projects: [
                     {
                         name: 'Corporate website',
-                        resp: 'Development of one page website',
+                        resp: 'Development of an one page website',
                         link: 'quantum-projects.com',
                         tasks: [
                             'Create simple HTML website',
@@ -280,11 +281,11 @@ module.exports = {
                         links: ['fxprofitcode.com', 'fxprofitcode.net'],
                         tasks: [
                             'The web application based on Symfony 3',
-                            'Used many modules (the Symfony bundles)',
-                            'Created database',
-                            'Different templates for different domains',
-                            'Created web application for admin panel',
-                            'Sending data to partners API',
+                            'Database Design',
+                            'Created multi-domain (multi-client) web-application with one Backend',
+                            'Created web application (Backend) for CRUD',
+                            'Communication with partners by API',
+                            'Partner API routing, which depends on potential customers',
                         ]
                     },
                 ],
@@ -302,9 +303,9 @@ module.exports = {
                         link: 'robertkaufman.com',
                         tasks: [
                             'The web application based on Symfony 3/Native PHP 7.0',
-                            'Making new functionality',
+                            'Making new functionality in legacy code',
                             'Moving from legacy PHP code to Symfony 3',
-                            'Moving from Symfony 3 to Symfony 4 (fix deprecations, use flex, DI)',
+                            'Moving from Symfony 3 to Symfony 4 (fix deprecations, include DI)',
                         ]
                     },
                     {
@@ -312,7 +313,8 @@ module.exports = {
                         resp: 'Development of module for Drupal',
                         link: 'ieeetv.ieee.org',
                         tasks: [
-                            'Creating AWS uploading file progress bar',
+                            'Creating AWS uploading (multi-thread) file progress bar',
+                            'Build/Debug Cordova Android/IOS applications'
                         ]
                     },
                 ],
