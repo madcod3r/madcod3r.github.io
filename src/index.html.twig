@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Oleg Voloshyn CV</title>
+    <title>{{ pageTitle }}</title>
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="print.css">
     <link rel="stylesheet" href="main.css">
@@ -17,29 +17,25 @@
 <div class="container">
     <div class="row">
         <div class="col-md-7 col-print-7 col-xs-7">
-            <h1>Oleg Voloshyn<br />
+            <h1>{{ me }}<br />
                 <small class="glitch-bg hidden-print">
                     <div class="glitch_word_box">
                         <div class="line"></div>
-                        
-                            <small id="word1" class="glitch_word1 glitch-common">PHP backend developer</small>
-                        
-                            <small id="word2" class="glitch_word2 glitch-common">PHP backend developer</small>
-                        
-                            <small id="word3" class="glitch_word3 glitch-common">PHP backend developer</small>
-                        
+                        {% for i in [1,2,3] %}
+                            <small id="word{{ i }}" class="glitch_word{{ i }} glitch-common">{{ title }}</small>
+                        {% endfor %}
                     </div>
                 </small>
-                <small class="visible-print">PHP backend developer</small>
+                <small class="visible-print">{{ title }}</small>
             </h1>
         </div>
 
         <div class="col-md-3 col-print-5 col-xs-5">
             <p style="margin-top:35px">
                 <small>
-                    Kiev, Ukraine<br />
-                    +38073 042 68 13<br />
-                    <a href="mailto:vololeg93@gmail.com">vololeg93@gmail.com</a><br />
+                    {{ location }}<br />
+                    {{ phone }}<br />
+                    <a href="mailto:{{ email }}">{{ email }}</a><br />
                 </small>
             </p>
         </div>
@@ -49,111 +45,27 @@
 
     <div class="row">
         <div class="col-md-3 col-print-3 print-hidden">
-            <h3>Skills</h3>
+            <h3>{{ skills.title }}</h3>
         </div>
 
         <div class="col-md-9 col-print-9 visible-print">
-            
-                <span>PHP7 (90%)</span>
-            
-                <span>JavaScript (90%)</span>
-            
-                <span>Symfony (95%)</span>
-            
-                <span>Yii2 (70%)</span>
-            
-                <span>MySQL (90%)</span>
-            
-                <span>JAVA (50%)</span>
-            
-                <span>Linux (80%)</span>
-            
-                <span>English (70%)</span>
-            
+            {% for skill in skills.list %}
+                <span>{{ skill.lang }} ({{ skill.percent }}%)</span>
+            {% endfor %}
         </div>
 
         <div class="col-md-9 col-print-9 hidden-print">
-            
+            {% for skill in skills.list %}
                 <div class="labels">
-                    <span>PHP7</span>
-                    <span>90%</span>
+                    <span>{{ skill.lang }}</span>
+                    <span>{{ skill.percent }}%</span>
                 </div>
                 <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"
-                         style="width: 90%;">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="{{ skill.percent }}" aria-valuemin="0" aria-valuemax="100"
+                         style="width: {{ skill.percent }}%;">
                     </div>
                 </div>
-            
-                <div class="labels">
-                    <span>JavaScript</span>
-                    <span>90%</span>
-                </div>
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"
-                         style="width: 90%;">
-                    </div>
-                </div>
-            
-                <div class="labels">
-                    <span>Symfony</span>
-                    <span>95%</span>
-                </div>
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"
-                         style="width: 95%;">
-                    </div>
-                </div>
-            
-                <div class="labels">
-                    <span>Yii2</span>
-                    <span>70%</span>
-                </div>
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"
-                         style="width: 70%;">
-                    </div>
-                </div>
-            
-                <div class="labels">
-                    <span>MySQL</span>
-                    <span>90%</span>
-                </div>
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"
-                         style="width: 90%;">
-                    </div>
-                </div>
-            
-                <div class="labels">
-                    <span>JAVA</span>
-                    <span>50%</span>
-                </div>
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"
-                         style="width: 50%;">
-                    </div>
-                </div>
-            
-                <div class="labels">
-                    <span>Linux</span>
-                    <span>80%</span>
-                </div>
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"
-                         style="width: 80%;">
-                    </div>
-                </div>
-            
-                <div class="labels">
-                    <span>English</span>
-                    <span>70%</span>
-                </div>
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"
-                         style="width: 70%;">
-                    </div>
-                </div>
-            
+            {% endfor %}
         </div>
     </div>
 
@@ -161,32 +73,22 @@
 
     <div class="row clearfix">
         <div class="col-md-12 col-print-12">
-            <h2>Education</h2>
+            <h2>{{ education.title }}</h2>
         </div>
 
         <hr />
 
-        
+        {% for education in education.list %}
             <div class="row">
                 <div class="col-md-3 col-print-3">
-                    <h4>2007 – 2011 year</h4>
+                    <h4>{{ education.period }}</h4>
                 </div>
 
                 <ul class="col-md-9 col-print-9">
-                    <li>(KTEP/КТЕП) Kiev College of electronic devices. Specialty &quot;Programming for computer facilities and the automated systems&quot;</li>
+                    <li>{{ education.name }}</li>
                 </ul>
             </div>
-        
-            <div class="row">
-                <div class="col-md-3 col-print-3">
-                    <h4>2011 – 2014 years</h4>
-                </div>
-
-                <ul class="col-md-9 col-print-9">
-                    <li>(ISTU/МНТУ) Academician Yuriy Bugay International Scientific and Technical University</li>
-                </ul>
-            </div>
-        
+        {% endfor %}
 
     </div>
 
