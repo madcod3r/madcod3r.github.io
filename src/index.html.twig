@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ pageTitle }}</title>
     <link rel="stylesheet" href="bootstrap.min.css">
-    <link rel="stylesheet" href="print.css">
     <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -65,7 +65,7 @@
 
     <div class="row visible-print">
         <div class="col-md-3 col-print-3">
-            <h3>{{ skills.title }}</h3>
+            <h2>{{ skills.title }}</h2>
         </div>
 
         <div class="col-md-9 col-print-9">
@@ -109,19 +109,24 @@
             {% for exp in experience.list %}
                 <div class="row">
                     <div class="col-md-3 col-print-3">
-                        <h4>{{ exp.period }}<br />
+                        <h4>
+                            <small>{{ exp.type }}</small>
+                            <small>{{ exp.period }}</small>
+                            <br />
                             {% if exp.comp %}
-                                {{ exp.comp }}<br />
+                                {{ exp.comp }}
+                                <br />
                             {% endif %}
                             {% if exp.desc %}
-                                {{ exp.desc }}<br />
+                                <small><b>{{ exp.desc }}</b></small>
+                                <br />
                             {% endif %}
                             {% if exp.link %}
                                 <small>
                                     <a href="http://{{ exp.link }}" target="_blank">{{ exp.link }}</a>
-                                </small><br />
+                                </small>
+                                <br />
                             {% endif %}
-                            <small>{{ exp.type }}</small>
                         </h4>
                     </div>
 
@@ -138,12 +143,12 @@
                                             <a href="http://{{ project.link }}" target="_blank">{{ project.link }}</a>
                                         {% endif %}
 
-                                            {% for link in project.links %}
-                                                <a href="http://{{ link }}" target="_blank">{{ link }}</a>
-                                            {% endfor %}
+                                        {% for link in project.links %}
+                                            <a href="http://{{ link }}" target="_blank">{{ link }}</a>
+                                        {% endfor %}
 
                                         <br />
-                                        <small>{{ project.resp }}</small>
+                                        <div class="well well-sm">{{ project.resp }}</div>
 
                                         {% if project.tasks %}
                                             <ul>
