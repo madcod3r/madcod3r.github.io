@@ -69,13 +69,12 @@ module.exports = {
                 ],
             },
             {
-                period: '2011-2012 years',
+                period: '2011-2014 years',
                 type: common.type.office,
                 comp: 'Leon van der Heijden',
                 desc: 'Web solutions for business',
                 projects: [
                     {
-                        period: '2011-2012 years',
                         name: 'ProDecoTextiles',
                         resp: 'Development & support of an online store selling textiles',
                         link: 'prodecotextiles.com',
@@ -87,7 +86,6 @@ module.exports = {
                         ],
                     },
                     {
-                        period: '2012 year',
                         name: 'SundaysKiev',
                         resp: 'Website development for organizing business meetings',
                         link: 'sundayskiev.com',
@@ -98,7 +96,6 @@ module.exports = {
                         ]
                     },
                     {
-                        period: '2012-2013 years',
                         name: 'Ticket2Mobile',
                         resp: 'Development of an online store for selling online tickets to events',
                         links: ['ticket2mobile.com', 't2m.com'],
@@ -111,7 +108,6 @@ module.exports = {
                         ]
                     },
                     {
-                        period: '2014-2015 years',
                         name: 'Kiev Business Consulting',
                         resp: 'Website development for business consulting',
                         link: 'kievbusinessconsulting.com.ua',
@@ -161,7 +157,6 @@ module.exports = {
                 desc: 'Poland development company',
                 projects: [
                     {
-                        period: '2015 year',
                         name: 'Eco Ready House',
                         resp: 'Assistance in the development of site designer homes',
                         link: 'ecoreadyhouse.pl',
@@ -177,7 +172,6 @@ module.exports = {
                         ]
                     },
                     {
-                        period: '2015 year',
                         resp: 'I\'ve been participated in the development / stretch layout on the online store',
                         tasks: [
                             'The store is designed with the help of Magento engine',
@@ -273,7 +267,7 @@ module.exports = {
                 desc: 'Web solutions development company',
                 projects: [
                     {
-                        name: 'Company website',
+                        name: 'Corporate website',
                         resp: 'Development of one page website',
                         link: 'quantum-projects.com',
                         tasks: [

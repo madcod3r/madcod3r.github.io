@@ -133,9 +133,7 @@
                         <div class="col-md-9 col-print-9">
                             {% for project in exp.projects %}
                                 <h3>
-                                    {% if project.name %}
-                                        <b>{{ project.name }}</b>
-                                    {% endif %}
+                                    {% if project.name %}{{ project.name }}{% endif %}
 
                                     {% if project.link %}
                                         <a href="http://{{ project.link }}" target="_blank">{{ project.link }}</a>
@@ -145,10 +143,18 @@
                                         <a href="http://{{ link }}" target="_blank">{{ link }}</a>
                                     {% endfor %}
 
-                                    <small>{{ project.period }}</small>
-
-                                    <div><small>{{ project.resp }}</small></div>
+                                    {% if project.period %}<small>{{ project.period }}</small>{% endif %}
                                 </h3>
+
+                                <div>
+                                    {% for techology in project.tech %}
+                                        <span class="label label-default">{{ techology }}</span>
+                                    {% endfor %}
+                                </div>
+
+                                {% if project.resp %}
+                                <h4><small><b>{{ project.resp }}</b></small></h4>
+                                {% endif %}
 
                                 {% if project.tasks %}
                                     <ul>
