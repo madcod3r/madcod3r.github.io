@@ -1,4 +1,3 @@
-//@TODO: refactor experience to per-project tasks
 //@TODO: added used technologies to experience
 //@TODO: Fix "Quantum Projects" and "Interactivity" experience
 //@TODO: Check typos
