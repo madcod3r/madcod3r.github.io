@@ -7,29 +7,41 @@ const common = {
     type: {
         freelance: 'Freelance',
         remote: 'Company (remote)',
-        office: 'Company (office)'
+        office: 'Company (office)',
+        officeRemote: 'Company (office/remote)',
     }
 };
 
 module.exports = {
-    pageTitle: 'Oleg Voloshyn CV',
-    me: 'Oleg Voloshyn',
-    title: 'PHP backend developer',
+    pageTitle: 'Oleh Voloshyn CV',
+    me: 'Oleh Voloshyn',
+    title: 'Middle PHP backend developer',
     location: 'Kiev, Ukraine',
     phone: '+38073 042 68 13',
     email: 'vololeg93@gmail.com',
 
+    social: [
+        {
+            name: 'github',
+            link: 'https://github.com/madcod3r'
+        },
+        {
+            name: 'linked',
+            link: 'https://www.linkedin.com/in/olehvoloshyn/'
+        },
+    ],
+
     skills: {
         title: 'Skills',
         list: [
-            { lang: 'PHP7', percent: 90 },
+            { lang: 'PHP7', percent: 99 },
             { lang: 'JavaScript', percent: 90 },
-            { lang: 'Symfony', percent: 95 },
+            { lang: 'Symfony', percent: 99 },
             { lang: 'Yii2', percent: 70 },
-            { lang: 'MySQL', percent: 90 },
+            { lang: 'MySQL', percent: 99 },
             { lang: 'JAVA', percent: 50 },
-            { lang: 'Linux', percent: 80 },
-            { lang: 'English', percent: 70 },
+            { lang: 'Linux', percent: 90 },
+            { lang: 'English', percent: 80 },
         ]
     },
 
@@ -379,6 +391,26 @@ module.exports = {
                             'Added /sitemap.xml generation for search engine',
                             'Implemented city recognition',
                             'Other new functionality for automation of work with products in pharmacies',
+                        ]
+                    },
+                ],
+            },
+            {
+                period: 'from 2019',
+                type: common.type.officeRemote,
+                comp: 'Reactorbits',
+                desc: 'Canadian-run outsourcing company',
+                link: 'reactorbits.com',
+                projects: [
+                    {
+                        name: 'Tireconnect',
+                        link: 'tireconnect.ca',
+                        resp: 'Sales Solutions for Tire Retailers',
+                        tasks: [
+                            'Creating new features/supporting system',
+                            'Improving API',
+                            'Optimizing database',
+                            'Creating new backend features for big clients and dealers',
                         ]
                     },
                 ],
