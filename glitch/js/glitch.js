@@ -1,31 +1,8 @@
-/* Based off of work on http://retromodular.com/ */
-/*·····················································
-···· Paul Reny ········································
-····················· ██ ██ ██ ██ ██ ·· ██ ██ ·········
-··············· ██ ██ ▒▒ ░░ ░░ ░░ ░░ ██ ▒▒ ░░ ██ ······
-············ ██ ▒▒ ░░ ░░ ██ ░░ ██ ░░ ░░ ██ ░░ ░░ ██ ···
-········· ██ ▒▒ ░░ ░░ ░░ ██ ░░ ██ ░░ ░░ ░░ ▒▒ ░░ ██ ···
-········· ██ ░░ ░░ ░░ ░░ ██ ░░ ██ ░░ ░░ ░░ ▒▒ ▒▒ ██ ···
-······ ██ ░░ ░░ ░░ ▒▒ ▒▒ ░░ ░░ ░░ ▒▒ ▒▒ ░░ ░░ ▒▒ ██ ···
-··· ██ ▒▒ ░░ ░░ ░░ ░░ ░░ ░░ ██ ░░ ░░ ░░ ░░ ░░ ░░ ██ ···
-··· ██ ░░ ░░ ▒▒ ░░ ░░ ░░ ░░ ██ ░░ ░░ ░░ ░░ ░░ ▒▒ ██ ···
-··· ██ ░░ ░░ ▒▒ ░░ ░░ ░░ ░░ ░░ ░░ ░░ ░░ ░░ ░░ ██ ······
-······ ██ ██ ██ ░░ ░░ ░░ ░░ ░░ ░░ ░░ ░░ ░░ ▒▒ ██ ······
-··· ██ ▒▒ ▒▒ ▒▒ ██ ░░ ░░ ░░ ░░ ░░ ░░ ░░ ░░ ▒▒ ██ ······
-··· ██ ▒▒ ▒▒ ▒▒ ▒▒ ██ ░░ ░░ ░░ ░░ ░░ ░░ ▒▒ ██ ·········
-··· ██ ▒▒ ▒▒ ▒▒ ▒▒ ██ ░░ ░░ ░░ ░░ ░░ ▒▒ ██ ██ ·········
-······ ██ ▒▒ ▒▒ ▒▒ ▒▒ ██ ▒▒ ▒▒ ▒▒ ██ ██ ▒▒ ▒▒ ██ ······
-········· ██ ▒▒ ▒▒ ██ ██ ██ ██ ██ ▒▒ ▒▒ ▒▒ ▒▒ ▒▒ ██ ···
-············ ██ ██ ██ ········ ██ ██ ██ ██ ██ ██ ······
-·····················································*/
-/* added dynamic sizing to the text. as long as it's */
-/* not too long of string, should always be visible */
-/* Controls info: https://code.google.com/p/dat-gui/ */
-/* dat.gui.js ==> https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.5/dat.gui.min.js */
-
 (function (){
     "use strict";
     var textSize = 10;
+    let glitchWidth = 500;
+    let glitchHeight = 200;
     var glitcher = {
 
         init: function () {
@@ -43,8 +20,8 @@
            /* var gui = new dat.GUI(),
                 current = gui.addFolder('Current'),
                 controls = gui.addFolder('Controls');*/
-            this.width = document.documentElement.offsetWidth;
-            this.height = document.documentElement.offsetHeight;
+            this.width = glitchWidth;
+            this.height = glitchHeight;
 
             this.textSize = Math.floor(this.width / 7);
             // sets text size based on window size
@@ -173,9 +150,9 @@
         },
 
         resize: function () {
-            this.width = document.documentElement.offsetWidth;
+            this.width = glitchWidth;
             //this.height = window.innerHeight;
-            this.height = document.documentElement.offsetHeight;
+            this.height = glitchHeight;
             if (this.canvas) {
                 this.canvas.height = this.height;
                 //document.documentElement.offsetHeight;
@@ -202,12 +179,13 @@
     setTimeout(function() {
         // added scenes
         var scenes = [
-            ['OMG, that..', 2],
-            ['Glitch effect', 2],
-            ['...', 1],
+            ['Hello, world', 1],
+            ['...', 0.5],
+            ['nice glitch effect', 2],
+            ['...', 0.5],
             ['I know, u like it', 2],
-            ['...', 1],
-            ['%username%', 0]
+            ['...', 0.5],
+            ['madcoder.org', 3]
         ];
 
         function setText(sceneText) {

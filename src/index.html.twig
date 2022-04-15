@@ -14,29 +14,36 @@
     <![endif]-->
 </head>
 <body>
+<div id="wrapper">
+    <canvas id="stage"></canvas>
+</div>
 <div class="container">
     <div class="row">
         <div class="col-md-7 col-print-7 col-xs-7">
             <h1>{{ me }}<br />
-                <small class="glitch-bg hidden-print">
-                    <div class="glitch_word_box">
-                        <div class="line"></div>
-                        {% for i in [1,2,3] %}
-                            <small id="word{{ i }}" class="glitch_word{{ i }} glitch-common">{{ title }}</small>
-                        {% endfor %}
-                    </div>
-                </small>
-                <small class="visible-print">{{ title }}</small>
+                <small>{{ title }}</small>
             </h1>
         </div>
 
-        <div class="col-md-3 col-print-5 col-xs-5">
+        <div class="col-md-3">
             <p style="margin-top:35px">
+                <h5>Contact:</h5>
                 <small>
                     {{ location }}<br />
                     {{ phone }}<br />
                     <a href="mailto:{{ email }}">{{ email }}</a><br />
                 </small>
+            </p>
+        </div>
+
+        <div class="col-md-2">
+            <p style="margin-top:35px">
+                <h5>Social:</h5>
+                {% for socialLink in social %}
+                <small>
+                    <a href="{{ socialLink.link }}" target="_blank">{{ socialLink.name }}</a><br />
+                </small>
+                {% endfor %}
             </p>
         </div>
     </div>
@@ -178,5 +185,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.5/dat.gui.min.js"></script>
+    <script src="glitch/js/glitch.js"></script>
 </body>
 </html>
